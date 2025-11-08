@@ -180,11 +180,6 @@ resource "aws_instance" "private_instance" {
   vpc_security_group_ids      = [aws_security_group.tailscale_sg.id]
   associate_public_ip_address = false
 
-  user_data = <<-EOF
-    #!/bin/bash
-    echo "Hello from private instance" > /tmp/instance_info.txt
-  EOF
-
   tags = {
     Name = "private-instance"
   }
@@ -214,3 +209,4 @@ output "private_instance_subnet" {
   description = "Subnet ID of the private subnet"
   value       = aws_subnet.private.id
 }
+
