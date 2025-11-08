@@ -22,7 +22,7 @@ Architecture Summary:
 ```bash
    aws configure
 ```
-5. Get a reusable Tailscale Auth Key from the Admin Console.
+3. Get a reusable Tailscale Auth Key from the Admin Console.
 
 ## Deployment Steps
 
@@ -31,9 +31,9 @@ Architecture Summary:
    git clone https://github.com/priyankshah90/tailscale-subnet-router.git
    cd tailscale-subnet-router
 ```
-3. Update terraform.tfvars with your AWS region, and Tailscale auth key.
+2. Update terraform.tfvars with your AWS region, and Tailscale auth key.
 
-4. Deploy:
+3. Deploy:
 ```bash
    terraform init
    terraform apply -auto-approve
@@ -71,5 +71,6 @@ To reset Terraform working directory:
 Priyank Shah
 Networking & Cybersecurity Engineer | Cloud & Automation Enthusiast
 Demonstrating secure, zero-trust AWS connectivity with Tailscale + Terraform.
+
 
 
