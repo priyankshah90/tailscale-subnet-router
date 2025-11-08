@@ -18,29 +18,34 @@ Architecture Summary:
    - Terraform
    - AWS CLI
 
-2. Configure AWS credentials using 'aws configure'.
-
-3. Get a reusable Tailscale Auth Key from the Admin Console.
+2. Configure AWS credentials using
+```bash
+   aws configure
+```
+5. Get a reusable Tailscale Auth Key from the Admin Console.
 
 ## Deployment Steps
 
 1. Clone the repo:
+```bash
    git clone https://github.com/priyankshah90/tailscale-subnet-router.git
    cd tailscale-subnet-router
+```
+3. Update terraform.tfvars with your AWS region, and Tailscale auth key.
 
-2. Update terraform.tfvars with your AWS region, and Tailscale auth key.
-
-3. Deploy:
+4. Deploy:
+```bash
    terraform init
    terraform apply -auto-approve
-
+```
 ## Verification
 
 After deployment, verify in the Tailscale Admin Console that your subnet router is online and routes are approved.
 
 From your local system (in Tailnet):
-  - tailscale ping 10.0.2.xx (Private IPv4 address of Private instance )
-   
+``` bash
+   tailscale ping 10.0.2.xx (Private IPv4 address of Private instance )
+```   
 Expected results:
    - tailscale ping → pong
 
@@ -55,8 +60,9 @@ Expected results:
 ## Cleanup
 
 To delete all AWS resources:
+``` bash
    terraform destroy -auto-approve
-
+```
 To reset Terraform working directory:
    rm -rf .terraform terraform.tfstate terraform.tfstate.backup .terraform.lock.hcl
 
@@ -65,4 +71,5 @@ To reset Terraform working directory:
 Priyank Shah
 Networking & Cybersecurity Engineer | Cloud & Automation Enthusiast
 Demonstrating secure, zero-trust AWS connectivity with Tailscale + Terraform.
+
 
